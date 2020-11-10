@@ -1,0 +1,116 @@
+{% extends "App/base.html" %} {% load static %} {% block content %}
+
+<!-- Datos id-mesa -->
+{% for datosBoleta in datosBoletas %}
+
+
+<section class="page-section cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">
+                            <p style="text-align: center;"><strong><span style="color: #ffffff;">VOTOS OBTENIDOS EN MESA {{ datosBoleta.id_mesa }}</span></strong>
+                        </p>
+                        <table id="tabla" style="width: 80%; margin-left: auto; margin-right: auto;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong><span style="color: #ffffff;">Presidente</span></strong>
+
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <strong><span style="color: #ffffff;">Diputado</span></strong>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">CC</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.cc_pres %} {{ datosBoleta.cc_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">CC</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.cc_dip %} {{ datosBoleta.cc_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">FPV</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.fpv_pres %} {{ datosBoleta.fpv_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">FPV</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.fpv_dip %} {{ datosBoleta.fpv_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">MTS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mts_pres %} {{ datosBoleta.mts_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">MTS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mts_dip %} {{ datosBoleta.mts_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">UCS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.ucs_pres %} {{ datosBoleta.ucs_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">UCS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.ucs_dip %} {{ datosBoleta.ucs_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">MAS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mas_pres %} {{ datosBoleta.mas_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">MAS</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mas_dip %} {{ datosBoleta.mas_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">21F</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.f21_pres %} {{ datosBoleta.f21_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">21F</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.f21_dip %} {{ datosBoleta.f21_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">PDC</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.pdc_pres %} {{ datosBoleta.pdc_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">PDC</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.pdc_dip %} {{ datosBoleta.pdc_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">MNR</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mnr_pres %} {{ datosBoleta.mnr_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">MNR</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.mnr_dip %} {{ datosBoleta.mnr_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">PAN</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.pan_pres %} {{ datosBoleta.pan_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">PAN</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.pan_dip %} {{ datosBoleta.pan_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">Blancos</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.blancos_pres %} {{ datosBoleta.blancos_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">Blancos</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.blancos_dip %} {{ datosBoleta.blancos_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color: #ffffff;">Nulos</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.nulos_pres %} {{ datosBoleta.nulos_pres }} {% else %} 0 {% endif%}</span></td>
+                                    <td>&nbsp;</td>
+                                    <td><span style="color: #ffffff;">Nulos</span></td>
+                                    <td><span style="color: #ffffff;">{% if datosBoleta.nulos_dip %} {{ datosBoleta.nulos_dip }} {% else %} 0 {% endif%}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<a href="{% url 'ExportDatos' datosBoleta.id %}" style='text-decoration:thickness;;color:white'>Exportar a Boletas a Excel</a> {% endfor %} {% endblock %}

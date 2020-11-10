@@ -1,0 +1,23 @@
+{% extends "App/base.html" %} {% load static %} {% block content %}
+<h3 style="text-align: center;">&nbsp;</h3>
+<h3 style="text-align: center;"><span style="color: #ffffff;"><strong>SELECCIONE UN DEPARTAMENTO</strong></span></h3>
+
+<!-- Datos Departamento -->
+{% for departamento in departamentos %}
+<section class="page-section cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">
+                            <a href="{% url 'Provincias' departamento.id %}" style='text-decoration:none;;color:white'>{{ departamento.nombre_dep }}</a>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %} {% endblock %}

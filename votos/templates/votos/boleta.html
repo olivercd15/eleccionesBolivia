@@ -1,0 +1,24 @@
+{% extends "App/base.html" %} {% load static %} {% block content %}
+<h3 style="text-align: center;">&nbsp;</h3>
+<h3 style="text-align: center;"><span style="color: #ffffff;"><strong>SELECCIONE UN NUMERO DE MESA</strong></span></h3>
+
+<!-- Datos id-mesa -->
+{% for boleta in boletas %}
+
+<section class="page-section cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">
+                            <a href="{% url 'DatosBoleta' boleta.id %}" style='text-decoration:none;;color:white'>{{ boleta.id_mesa }}</a>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %} {% for boleta in boletas|slice:":1" %}
+<a href="{% url 'Export' boleta.recinto_id %}" style='text-decoration:thickness;;color:white'>Exportar a Boletas a Excel</a>{% endfor %} {% endblock %}

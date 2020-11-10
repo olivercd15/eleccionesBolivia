@@ -1,0 +1,24 @@
+{% extends "App/base.html" %} {% load static %} {% block content %}
+<h3 style="text-align: center;">&nbsp;</h3>
+<h3 style="text-align: center;"><span style="color: #ffffff;"><strong>SELECCIONE UNA LOCALIDAD</strong></span></h3>
+
+<!-- Datos Localidades -->
+{% for localidad in localidades %}
+
+<section class="page-section cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">
+                            <a href="{% url 'Recintos' localidad.id %}" style='text-decoration:none;;color:white'>{{ localidad.nombre_loc }}</a>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %} {% endblock %}

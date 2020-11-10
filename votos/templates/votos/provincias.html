@@ -1,0 +1,24 @@
+{% extends "App/base.html" %} {% load static %} {% block content %}
+<h3 style="text-align: center;">&nbsp;</h3>
+<h3 style="text-align: center;"><span style="color: #ffffff;"><strong>SELECCIONE UNA PROVINCIA</strong></span></h3>
+
+<!-- Datos Provincias -->
+{% for provincia in provincias %}
+
+<section class="page-section cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">
+                            <a href="{% url 'Municipios' provincia.id %}" style='text-decoration:none;;color:white'>{{ provincia.nombre_prov }}</a>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %} {% endblock %}
